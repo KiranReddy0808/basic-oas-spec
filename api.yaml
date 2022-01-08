@@ -1,0 +1,21 @@
+openapi: 3.0.0
+info:
+  title: Book Library API (OAS3.0)
+  version: '1.10'
+  description: Sample OAS API
+  contact:
+    name: Kiran
+
+servers:
+  - url: 'https://localhost.books.io/v1'
+    description: Base URL for the API
+
+tags:
+  - name: books
+    description: books resource
+
+paths:
+  /books:
+    $ref: "paths/books.yaml"
+
+

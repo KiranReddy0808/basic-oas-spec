@@ -1,0 +1,9 @@
+title: New Book
+description: The New Book to be added to Library
+type: object
+required: [book]
+properties:
+  book:
+    title: Book Details
+    description: Details of the New Book
+    type: string

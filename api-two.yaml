@@ -1,0 +1,55 @@
+openapi: 3.0.0
+info:
+  title: Book Library API (OAS3.0)
+  version: '1.10'
+  description: Sample OAS API
+  contact:
+    name: Kiran
+
+servers:
+  - url: 'https://localhost.books.io/v1'
+    description: Base URL for the API
+
+tags:
+  - name: books
+    description: books resource
+
+paths:
+  /books:
+    summary: Library books
+    post:
+      operationId: add-book
+      description: Post method to add book to Library
+      summary: Add Book
+      tags: [books]
+      parameters:
+      - name: Accept
+        in: header
+        description: Accept header
+        schema:
+          type: string
+        example: application/json
+      - name: Content-Type
+        in: header
+        description: Content Type
+        schema:
+          type: string
+        example: application/json
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: schemas/add-book-request-schema.yaml
+            example:
+              $ref: examples/add-book-request-example.yaml
+
+      responses:
+        '201':
+          description: Book added Successfully
+          content:
+            application/json:
+              schema:
+                $ref: schemas/add-book-response-schema.yaml
+              example:
+                $ref: examples/add-book-response-example.yaml
