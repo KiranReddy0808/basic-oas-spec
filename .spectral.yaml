@@ -13,7 +13,7 @@ rules:
     description: Random property should exist at the root
     message: Random property doesnt exist
     severity: warn
-    given: $.info.title
+    given: $.info.apiname
     then:
-      field: name
+      field: title
       function: defined
