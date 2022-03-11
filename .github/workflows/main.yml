@@ -1,15 +1,16 @@
 name: Run Spectral Rules!
 
 on:
-  workflow_dispatch
+  - workflow_dispatch
+  - push
+  - pull_request
     
-
 jobs:
   build:
-    name: Run Spectral
+    name: API Checks
     runs-on: ubuntu-latest
     steps:
-      # Check out the repository
+
       - uses: actions/checkout@v2
 
       # Run Spectral
