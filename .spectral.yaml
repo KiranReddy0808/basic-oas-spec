@@ -9,11 +9,11 @@ rules:
       field: random
       function: defined
     
-  oas-name-of-title:
-    description: Random property should exist at the root
-    message: Random property doesnt exist
+  oas-title-of-apiname:
+    description: apiname should have a title property.
+    message: apiname doesn't have a title property
     severity: warn
     given: $.info.apiname
     then:
-      field: title
-      function: defined
+       field: title
+       function: defined
