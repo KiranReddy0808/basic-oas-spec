@@ -1,0 +1,21 @@
+rules:
+  
+  oas-random-property:
+    description: Random property should exist at the root
+    message: Random property doesnt exist
+    severity: warn
+    given: $
+    then:
+      field: random
+      function: defined
+    
+  oas-properties-summary:
+    description: "Properties in Schema must have description"
+    message: "Property {{property}} MUST have summary at {{path}} : {{description}}"
+    severity: error
+    given: 
+      - $.paths.*.*.responses.*.content.*.schema..properties..[?(@.type)]
+      - $.paths.*.*.requestBody.content.*.schema..properties..[?(@.type)]
+    then:
+      - field: summary
+        function: truthy
