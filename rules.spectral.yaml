@@ -1,15 +1,15 @@
 functions: [print]
 rules:
-
-  # oas-empty:
-  #   description: "empty field"
-  #   message: "{{error}}"
-  #   severity: error
-  #   given: $
-  #   then:
-  #     field: empty
-  #     function: truthy
-
+  
+  oas-random-property:
+    description: Random property should exist at the root
+    message: Random property doesnt exist
+    severity: warn
+    given: $
+    then:
+      field: random
+      function: defined
+    
   oas-properties-summary:
     description: "Properties in Schema must have description"
     message: "Property {{property}} MUST have summary at {{path}} : {{description}}"
@@ -22,3 +22,5 @@ rules:
         function: truthy
       - field: description
         function: print
+        
+     
