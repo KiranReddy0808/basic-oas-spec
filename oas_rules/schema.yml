@@ -1,0 +1,10 @@
+rules:
+
+  schema-types:
+    description: print response type
+    message: {{description}}
+    severity: info
+    given: $.paths.*.*.responses.*.content.*.schema
+    then:
+      field: type
+      function: print
