@@ -3,7 +3,7 @@ rules:
 # print not working
   schema-types:
     description: enum response type
-    message: {{description}}
+    message: '{{description}}'
     severity: info
     given: $.paths.*.*.responses.*.content.*.schema
     then:
