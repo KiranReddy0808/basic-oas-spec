@@ -1,3 +1,7 @@
+extends: 
+ - [./oas_rules/header.yml, all]
+ - [./oas_rules/schema.yml, all]
+ 
 functions: [print]
 rules:
   
