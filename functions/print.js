@@ -1,4 +1,12 @@
-export default function (input, ...args) {
-    console.log(input);
+export default createRulesetFunction<unknown, null>(
+  {
+    input: null,
+  },
+  function print(input) {
+    if (input) {
+      console.log(input);
+      return [];
+    }
     return [];
-}
+  },
+);
