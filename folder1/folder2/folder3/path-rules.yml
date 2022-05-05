@@ -1,0 +1,11 @@
+rules:
+
+  well-known-paths-exists:
+    description: well known health path must exist.
+    message: {{description}}
+    severity: error
+    given: $.paths
+    then:
+      field: /health
+      function: defined
+    
