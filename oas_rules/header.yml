@@ -1,7 +1,7 @@
 rules:
 
   header-names:
-    description: remove content type header
+    description: print header names
     message: {{description}}
     severity: warn
     given: $.paths.*.*.parameters[?(@.in == "header")].name
