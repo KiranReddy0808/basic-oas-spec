@@ -1,3 +1,4 @@
-export default targetVal => {
-    console.log(targetVal)
+export default function (input, ...args) {
+    console.log(input);
+    return [];
 }
