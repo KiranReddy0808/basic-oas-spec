@@ -2,7 +2,7 @@ rules:
 
   well-known-paths-exists:
     description: well known health path must exist.
-    message: {{description}}
+    message: '{{description}}'
     severity: error
     given: $.paths
     then:
