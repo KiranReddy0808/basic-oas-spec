@@ -2,8 +2,8 @@ rules:
 
 #print not workng
   header-names:
-    description: header names must be less than 5 characters ?
-    message: {{description}}
+    description: header names must be less than 5 characters
+    message: '{{description}}'
     severity: warn
     given: $.paths.*.*.parameters[?(@.in == "header")].name
     then:
