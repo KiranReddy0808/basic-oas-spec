@@ -3,7 +3,7 @@ extends:
  - [./oas_rules/schema.yml, all]
  - https://raw.githubusercontent.com/KiranReddy0808/basic-oas-spec/main/folder1/folder2/folder3/path-rules.yml
  
-functions: [print]
+# functions: [print]
 rules:
   
   oas-random-property:
@@ -26,6 +26,6 @@ rules:
       - field: summary
         function: truthy
       - field: description
-        function: print
+        function: falsy
         
      
