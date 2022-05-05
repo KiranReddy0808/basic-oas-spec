@@ -1,10 +1,16 @@
 rules:
 
+# print not working
   schema-types:
-    description: print response type
+    description: enum response type
     message: {{description}}
     severity: info
     given: $.paths.*.*.responses.*.content.*.schema
     then:
       field: type
-      function: print
+      function: enumeration
+      functionOptions:
+        values:
+          - object
+          - array
+          - string
