@@ -1,9 +1,12 @@
 rules:
 
+#print not workng
   header-names:
-    description: print header names
+    description: header names must be less than 5 characters ?
     message: {{description}}
     severity: warn
     given: $.paths.*.*.parameters[?(@.in == "header")].name
     then:
-      function: print
+      function: length
+      functionOptions:
+        max: 5
